@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root{
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--Very-Light-Gray);
+    color: var(--Grayish-Blue);
+}
+
+img{
+    max-width: 100%;
+}
+
+.container {
+    padding: 0 30px;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+
+.features {
+    width: 100%;
+    padding: 120px 0;
+}
+
+.features .row.heading {
+    text-align: center;
+}
+
+.features .row.heading h1 {
+    color: var(--Very-Dark-Blue);
+    font-weight: 700;
+    line-height: 1.3;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.features .row.heading h1 span {
+    font-weight: 200;
+}
+
+.features .row.heading {
+    max-width: 500px;
+    margin-inline: auto;
+}
+
+.features .row.boxes {
+    margin-top: 60px;
+}
+
+.features .row.boxes .box{
+    margin: 30px 0;
+    box-shadow: 0px 10px 25px -10px hsl(234, 12%, 75%);
+    border-radius: 5px;
+    /* border-top: 4px solid; */
+    padding: 30px;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.features .row.boxes .box::before{
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.features .row.boxes .box.Cyan::before {
+    background-color: var(--Cyan);
+}
+
+.features .row.boxes .box.Red::before {
+    background-color: var(--Red);
+}
+
+.features .row.boxes .box.Orange::before {
+    background-color: var(--Orange);
+}
+
+.features .row.boxes .box.Blue::before {
+    background-color: var(--Blue);
+}
+
+.features .row.boxes .box h3{
+    color: var(--Very-Dark-Blue);
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.features .row.boxes .box .image {
+    text-align: right;
+    margin-top: 40px;
+}
+
+
+/*-------devices----------*/
+
+@media(min-width: 992px){
+    .features .row.boxes{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .container {
+        padding: 0 80px;
+    }
+    .features .row.heading h1 {
+        font-size: 37px;
+    }
+}
